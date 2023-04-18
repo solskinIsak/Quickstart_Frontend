@@ -1,4 +1,4 @@
-const URL = "http://localhost:8080/Quick_start_Backend/api";
+const URL = "http://localhost:8080";
 
 function handleHttpErrors(res) {
  if (!res.ok) {
