@@ -1,22 +1,23 @@
 import React, {useEffect, useState} from 'react';
 import facade from "../apiFacade.js";
-import {dadJokeURL} from "../settings.js";
+import {dadJokeURL,chuckURL,ultimateJokeURL} from "../settings.js";
 
 const Joke = ({user}) => {
 
 
     const [dataFromServer, setDataFromServer] = useState("")
-    const [joke, setJoke] = useState("")
-    let data ="";
+    const [joke, setJoke] = useState([])
+    let data = "";
+
 
     useEffect( () => {
         if(user.username === ''){ setDataFromServer('Please login to see date from server');
 
             return;
         }
-        fetch(dadJokeURL)
+        fetch(ultimateJokeURL)
             .then(response => response.json())
-            .then(data =>setJoke(data.joke)
+            .then(data =>setJoke(data.jokes)
 
             ).catch(err => {
                 console.error(err)
@@ -31,7 +32,9 @@ const Joke = ({user}) => {
     return (
         <div>
             {dataFromServer}
-            <h1>{joke}</h1>
+            <h2>{"CHUCK JOKE:    "+ joke[0]}</h2>
+            <br/>
+            <h2>{"DAD JOKE:     "+ joke[1]}</h2>
         </div>
     );
 };
