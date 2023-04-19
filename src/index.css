@@ -1,5 +1,12 @@
 .header {
-    color: whitesmoke;
+    color: #adadad;
+}
+.text-muted {
+    color: #6c757d;
+}
+.featurette-heading{
+    color: #52962c;
+
 }
 /* For the router */
 ul.header {

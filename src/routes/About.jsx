@@ -11,7 +11,7 @@ useEffect( () => {
     if(user.username === ''){ setDataFromServer('Please login to see date from server');
         return;
 }
-    const url = user.roles.split(',').includes('user') ? '/api/info/user' : '/api/info/admin';
+    const url = user.roles.split(',').includes('user') ? '/info/user' : '/info/admin';
 
     facade.fetchData(url).then(res => {
 

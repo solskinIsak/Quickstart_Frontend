@@ -1,5 +1,4 @@
-const URL = "http://localhost:8080";
-
+import {baseURL, dadJokeURL} from "./settings.js";
 function handleHttpErrors(res) {
  if (!res.ok) {
    return Promise.reject({ status: res.status, fullError: res.json() })
@@ -13,14 +12,14 @@ function apiFacade() {
 const login = (user, password) => {
     // console.log("login");
     const options = makeOptions("POST", true,{username: user, password: password });
-    return fetch(URL + "/api/login", options)
+    return fetch(baseURL + "/login", options)
       .then(handleHttpErrors)
       .then(res => {setToken(res.token) })
 }
 
 const fetchData = (ressource) => {
     const options = makeOptions("GET",true); //True add's the token
-   return fetch(URL + ressource, options).then(handleHttpErrors);
+   return fetch(baseURL + ressource, options).then(handleHttpErrors);
 }
 const makeOptions= (method,addToken,body) =>{
    var opts = {

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react"
 import facade from "./apiFacade";
-import Content from "./components/Content.jsx";
 import Header from "./components/Header.jsx";
 import About from "./routes/About.jsx";
+import Joke from "./routes/Joke.jsx";
+import {Route, Routes} from "react-router-dom";
+import Home from "./routes/Home.jsx";
 
 
 function App() {
@@ -25,7 +27,11 @@ function App() {
   return (
     <div>
       <Header loggedIn={loggedIn} login={login} user={user} logout={logout}/>
-      <Content user={user}/>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/about" element={<About user={user} />}/>
+        <Route path="/joke" element={<Joke user={user} />}/>
+      </Routes>
     </div>
   )
 }
