@@ -1,4 +1,4 @@
-This is the Frontend template for CA2.
+  ### QUICKSTART FRONTEND GUIDE
 
 by Felicia, Jamie, Isak & Helena
 
@@ -12,3 +12,5 @@ In src/App.jsx you will need to add the routes to the return method
 In src/settings.js you will need to add the URL as a const, after that in src/apiFacade.js you will need to import the url's you wish to use, in the top.
 
 After you have added the url's to settings.js, you also need to import the url's to the top of your routes-file.
+
+You will also need to deploy your project to your own server.
